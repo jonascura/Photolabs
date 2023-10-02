@@ -4,7 +4,7 @@ import '../styles/HomeRoute.scss';
 import PhotoList from '../components/PhotoList';
 import TopNavigationBar from '../components/TopNavigationBar';
 
-const HomeRoute = () => {
+const HomeRoute = ({openModal}) => {
 
   // create logic that stores likes globally
   // likedPhotos is an empty array
@@ -28,7 +28,7 @@ const HomeRoute = () => {
     <div className="home-route">
       {/* Insert React */}
       <TopNavigationBar likedPhotos={likedPhotos}/>
-      <PhotoList likedPhotos={likedPhotos} toggleLike={toggleLike}/>
+      <PhotoList likedPhotos={likedPhotos} toggleLike={toggleLike} openModal={openModal}/>
     </div>
   );
 };

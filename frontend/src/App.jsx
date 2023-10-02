@@ -3,18 +3,29 @@ import React, { useState } from 'react';
 import './styles/HomeRoute.scss';
 import './App.scss';
 import HomeRoute from 'routes/HomeRoute';
+import PhotoDetailsModal from 'routes/PhotoDetailsModal';
 
 // Note: Rendering a single component to build components in isolation
 const App = () => {
 
+  // set conditions for modal onClick
+  const [isModal, setModal] = useState(false);
 
+  const openModal = () => {
+    setModal(true);
+  };
+
+  const closeModal = () => {
+    setModal(false);
+  };
 
   return (
     <div className="App">
       {/* { Array.from(Array(3)).map((_, index) => <PhotoListItem key={index}/>) } */}
       {/* <TopicListItem/> */}
       <div className="home-route" >
-        <HomeRoute />
+        <HomeRoute openModal={openModal}/>
+        {isModal && <PhotoDetailsModal closeModal={closeModal}/>}
       </div>
     </div>
   );
