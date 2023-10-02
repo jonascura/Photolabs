@@ -4,21 +4,18 @@ import "../styles/PhotoListItem.scss";
 import "../styles/PhotoList.scss";
 import PhotoFavButton from "./PhotoFavButton";
 
-const PhotoListItem = ({photo}) => {
+const PhotoListItem = ({ photo, likedPhotos, toggleLike }) => {
   // render photos
-  console.log("photo is", photo)
+  // console.log("inside PhotoListItem", liked, switchLike)
   const { id, location, urls, user } = photo;
 
-  // set button state
-  const [liked, setLiked] = useState(false);
-
-  const switchLike = () => {
-    setLiked(!liked);
-  };
+  // set button state for idividual item
+  const liked = likedPhotos.includes(id);
+  const switchLike = () => toggleLike(id);
 
   return (
     <div className="photo-list__item">
-      <PhotoFavButton like={liked} switchLike={switchLike} />
+      <PhotoFavButton liked={liked} switchLike={switchLike}/>
       <img src={urls.regular} alt={`Photo ${id}`} className="photo-list__image" />
       <div className="photo-list__user-details">
         <img src={user.profile} alt={`${user.name}'s profile`} className="photo-list__user-profile" />

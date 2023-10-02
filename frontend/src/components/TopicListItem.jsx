@@ -9,7 +9,7 @@ import "../styles/TopicListItem.scss";
 // };
 
 const TopicListItem = ({topic}) => {
-  console.log("in PhotoListItem topic is", topic)
+  console.log("in TopicListItem topic is", topic)
 
   if (!topic) {
     return null; // Or some default content or loading indicator
