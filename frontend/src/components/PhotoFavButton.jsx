@@ -3,8 +3,7 @@ import React from 'react';
 import FavIcon from './FavIcon';
 import '../styles/PhotoFavButton.scss';
 
-function PhotoFavButton(props) {
-  const {like, switchLike} = props;
+function PhotoFavButton({like, switchLike}) {
 
   return (
     <div className="photo-list__fav-icon" onClick={switchLike}>

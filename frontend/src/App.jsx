@@ -1,30 +1,35 @@
 import React, { useState } from 'react';
 
-import PhotoListItem from './components/PhotoListItem';
-import PhotoFavButton from './components/PhotoFavButton';
 import PhotoList from './components/PhotoList';
+import './styles/HomeRoute.scss';
 import './App.scss';
-
-// const sampleDataForPhotoListItem = {
-//   id: "1",
-//   location: {
-//     city: "Montreal",
-//     country: "Canada",
-//   },
-//   imageSource: `${process.env.PUBLIC_URL}/Image-1-Regular.jpeg`,
-//   username: "Joe Example",
-//   profile: `${process.env.PUBLIC_URL}/profile-1.jpg`,
-// };
+import TopNavigationBar from 'components/TopNavigationBar';
 
 // Note: Rendering a single component to build components in isolation
 const App = () => {
+
   return (
     <div className="App">
       {/* { Array.from(Array(3)).map((_, index) => <PhotoListItem key={index}/>) } */}
-      <PhotoList/>
+      {/* <TopicListItem/> */}
+      <div className="home-route" >
+        <TopNavigationBar />
+        <PhotoList />
+      </div>
     </div>
   );
   
+};
+
+export default App;
+
+
+
+
+
+
+
+
 
   // const [liked, setLiked] = useState(false);
 
@@ -40,9 +45,3 @@ const App = () => {
   // ));
 
   // return <div className="App">{photos}</div>;
-
-  
-  
-};
-
-export default App;
