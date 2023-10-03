@@ -41,17 +41,6 @@ const PhotoDetailsModal = ({ closeModal, photo, likedPhotos, toggleLike, openMod
         {/* Similar Photos */}
         <PhotoList likedPhotos={likedPhotos} toggleLike={toggleLike} openModal={openModal}/>
 
-        <div className="photo-list__item">
-          <img src={urls.regular} alt={`Photo ${id}`} className="photo-list__image"/>
-          <div className="photo-list__user-details">
-            <img src={user.profile} alt={`${user.name}'s profile`} className="photo-list__user-profile" />
-            <div className="photo-list__user-info">
-              {user.username}
-              <div className="photo-list__user-location">{location.city}, {location.country}</div>
-            </div>
-          </div>
-        </div>
-
       </div>
 
       
