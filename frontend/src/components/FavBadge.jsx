@@ -4,7 +4,7 @@ import FavIcon from './FavIcon';
 import '../styles/FavBadge.scss';
 
 const FavBadge = ({ likedPhotos }) => {
-  console.log("favPhoto", likedPhotos.length)
+  // console.log("favPhoto", likedPhotos.length)
 
   const displayAlert = () => {
     if (likedPhotos.length === 0) {

@@ -4,9 +4,9 @@ import "../styles/PhotoListItem.scss";
 import "../styles/PhotoList.scss";
 import PhotoFavButton from "./PhotoFavButton";
 
-const PhotoListItem = ({ photo, likedPhotos, toggleLike, openModal}) => {
+const PhotoListItem = ({ photo, likedPhotos, toggleLike, openModal }) => {
   // render photos
-  // console.log("inside PhotoListItem", liked, switchLike)
+  console.log("inside PhotoListItem", likedPhotos)
   const { id, location, urls, user } = photo;
 
   // set button state for idividual item
@@ -16,7 +16,8 @@ const PhotoListItem = ({ photo, likedPhotos, toggleLike, openModal}) => {
   return (
     <div className="photo-list__item">
       <PhotoFavButton liked={liked} switchLike={switchLike}/>
-      <img src={urls.regular} alt={`Photo ${id}`} className="photo-list__image" onClick={openModal}/>
+      {/* modal activated on image click */}
+      <img src={urls.regular} alt={`Photo ${id}`} className="photo-list__image" onClick={() => openModal(photo)}/>
       <div className="photo-list__user-details">
         <img src={user.profile} alt={`${user.name}'s profile`} className="photo-list__user-profile" />
         <div className="photo-list__user-info">

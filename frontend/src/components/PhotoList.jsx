@@ -7,8 +7,7 @@ import "../styles/PhotoList.scss";
 
 const PhotoList = ({ likedPhotos, toggleLike, openModal }) => {
   // console.log("inside Photolist", liked, switchLike);
-
-
+  
   return (
     <ul className="photo-list">
       {photos.map(photo => (
