@@ -7,14 +7,15 @@ import closeSymbol from '../assets/closeSymbol.svg';
 import PhotoFavButton from 'components/PhotoFavButton';
 import PhotoList from 'components/PhotoList';
 
-const PhotoDetailsModal = ({ closeModal, photo, likedPhotos, toggleLike, openModal }) => {
-  
+const PhotoDetailsModal = ({ photos, closeModal, photo, favoritePhotos, updateToFavPhotoIds, openModal}) => {
+
+  if (!photo) {
+    return null;
+  }
+
   console.log("inside modal", photo);
   const { id, location, urls, user } = photo;
 
-  // set button state for idividual item
-  const liked = likedPhotos.includes(id);
-  const switchLike = () => toggleLike(id);
 
   return (
     <div className="photo-details-modal">
@@ -23,7 +24,7 @@ const PhotoDetailsModal = ({ closeModal, photo, likedPhotos, toggleLike, openMod
       </button>
 
       <div className="photo-details-modal__images">
-        <PhotoFavButton liked={liked} switchLike={switchLike}/>
+        <PhotoFavButton favoritePhotos={favoritePhotos.includes(id)} switchLike={() => updateToFavPhotoIds(id)}/>
         <img src={urls.regular} alt={`Photo ${id}`} className="photo-details-modal__image"/>
         <div className="photo-details-modal__photographer-details">
           <img src={user.profile} alt={`${user.name}'s profile`} className="photo-list__user-profile" />
@@ -39,7 +40,7 @@ const PhotoDetailsModal = ({ closeModal, photo, likedPhotos, toggleLike, openMod
         </div>
       
         {/* Similar Photos */}
-        <PhotoList likedPhotos={likedPhotos} toggleLike={toggleLike} openModal={openModal}/>
+        <PhotoList photos={photos} updateToFavPhotoIds={updateToFavPhotoIds} favoritePhotos={favoritePhotos} openModal={openModal}/>
 
       </div>
 
