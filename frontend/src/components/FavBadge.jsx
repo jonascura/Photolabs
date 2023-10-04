@@ -7,15 +7,15 @@ const FavBadge = ({ favoritePhotos }) => {
   console.log("favPhoto", favoritePhotos.length)
 
   const displayAlert = () => {
-    if (favoritePhotos.length > 0) {
-      return true;
+    if (favoritePhotos.length === 0) {
+      return false;
     }
-    return false;
+    return true;
   };
 
   return (
     <div className='fav-badge'>
-      <FavIcon selected={true} displayAlert={displayAlert}/>
+      <FavIcon selected={true} displayAlert={displayAlert()}/>
     </div>
   ) 
 };
