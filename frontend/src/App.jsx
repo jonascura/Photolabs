@@ -14,6 +14,7 @@ const App = () => {
     onPhotoSelect,
     updateToFavPhotoIds,
     onClosePhotoDetailsModal,
+    getPhotosByTopicId,
   } = useApplicationData();
 
   const { photos, topics, selectedPhoto, favoritePhotos, modal } = state;
@@ -22,7 +23,7 @@ const App = () => {
   return (
     <div className="App">
       <div className="home-route" >
-        <HomeRoute photos={photos} topics={topics} openModal={onPhotoSelect} updateToFavPhotoIds={updateToFavPhotoIds} favoritePhotos={favoritePhotos}/>
+        <HomeRoute photos={photos} topics={topics} openModal={onPhotoSelect} updateToFavPhotoIds={updateToFavPhotoIds} favoritePhotos={favoritePhotos} getPhotosByTopicId={getPhotosByTopicId} />
         {modal && <PhotoDetailsModal photos={photos} photo={selectedPhoto} favoritePhotos={favoritePhotos} updateToFavPhotoIds={updateToFavPhotoIds} openModal={onPhotoSelect} closeModal={onClosePhotoDetailsModal}/>}
       </div>
     </div>

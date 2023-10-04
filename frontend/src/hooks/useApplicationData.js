@@ -1,6 +1,4 @@
 import { useReducer, useEffect } from 'react';
-// import photos from 'mocks/photos';
-// import topics from 'mocks/topics';
 
 const initialState = {
   selectedPhoto: null,
@@ -65,6 +63,18 @@ const useApplicationData = () => {
       .catch(error => console.error('Error fetching topics:', error));
   }, []); // Empty dependency array ensures useEffect runs once after initial render
 
+  
+  // Function to fetch photos by topic ID
+  const getPhotosByTopicId = (topicId) => {
+    fetch(`http://localhost:8001/api/topics/photos/${topicId}`)
+      .then(response => response.json())
+      .then(data => {
+        // Dispatch action to update photos based on topic ID
+        dispatch({ type: 'SET_PHOTOS', payload: data });
+      })
+      .catch(error => console.error(`Error fetching photos for topic ID ${topicId}:`, error));
+  };
+
   const onPhotoSelect = (photo) => {
     dispatch({ type: 'SELECT_PHOTO', payload: photo });
   };
@@ -81,7 +91,8 @@ const useApplicationData = () => {
     state,
     onPhotoSelect,
     updateToFavPhotoIds,
-    onClosePhotoDetailsModal
+    onClosePhotoDetailsModal,
+    getPhotosByTopicId
   };
 };
 
