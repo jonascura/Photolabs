@@ -3,7 +3,7 @@ import React from "react";
 import "../styles/TopicListItem.scss";
 
 const TopicListItem = ({ getPhotosByTopicId, topic }) => {
-  console.log("in TopicListItem", getPhotosByTopicId, topic)
+  // console.log("in TopicListItem", getPhotosByTopicId, topic)
   
   const { id, slug, title } = topic;
 

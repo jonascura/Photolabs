@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 
 import PhotoListItem from "./PhotoListItem";
 import "../styles/PhotoList.scss";
 
 
 const PhotoList = ({ photos, updateToFavPhotoIds, favoritePhotos, openModal }) => {
-  console.log("inside Photolist", photos);
+  // console.log("inside Photolist", photos);
   
   return (
     <ul className="photo-list">

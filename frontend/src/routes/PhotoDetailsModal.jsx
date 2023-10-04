@@ -9,13 +9,8 @@ import PhotoList from 'components/PhotoList';
 
 const PhotoDetailsModal = ({ photos, closeModal, photo, favoritePhotos, updateToFavPhotoIds, openModal}) => {
 
-  if (!photo) {
-    return null;
-  }
-
   const { id, location, urls, user, similar_photos } = photo;
-  console.log("inside modal", similar_photos);
-
+  // console.log("inside modal", similar_photos);
 
   return (
     <div className="photo-details-modal">
@@ -44,7 +39,6 @@ const PhotoDetailsModal = ({ photos, closeModal, photo, favoritePhotos, updateTo
 
       </div>
 
-      
     </div>
   )
 };
