@@ -13,8 +13,8 @@ const PhotoDetailsModal = ({ photos, closeModal, photo, favoritePhotos, updateTo
     return null;
   }
 
-  console.log("inside modal", photo);
-  const { id, location, urls, user } = photo;
+  const { id, location, urls, user, similar_photos } = photo;
+  console.log("inside modal", similar_photos);
 
 
   return (
@@ -40,7 +40,7 @@ const PhotoDetailsModal = ({ photos, closeModal, photo, favoritePhotos, updateTo
         </div>
       
         {/* Similar Photos */}
-        <PhotoList photos={photos} updateToFavPhotoIds={updateToFavPhotoIds} favoritePhotos={favoritePhotos} openModal={openModal}/>
+        <PhotoList photos={similar_photos} updateToFavPhotoIds={updateToFavPhotoIds} favoritePhotos={favoritePhotos} openModal={openModal}/>
 
       </div>
 

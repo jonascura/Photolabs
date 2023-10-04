@@ -1,12 +1,10 @@
 import { useReducer } from 'react';
-import photos from 'mocks/photos';
-import topics from 'mocks/topics';
+// import photos from 'mocks/photos';
+// import topics from 'mocks/topics';
 
 const initialState = {
-  photos,
   selectedPhoto: null,
   favoritePhotos: [],
-  topics,
   modal:false
 };
 

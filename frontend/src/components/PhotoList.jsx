@@ -5,7 +5,7 @@ import "../styles/PhotoList.scss";
 
 
 const PhotoList = ({ photos, updateToFavPhotoIds, favoritePhotos, openModal }) => {
-  // console.log("inside Photolist", liked, switchLike);
+  console.log("inside Photolist", photos);
   
   return (
     <ul className="photo-list">
