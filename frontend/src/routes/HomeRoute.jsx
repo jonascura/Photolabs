@@ -12,7 +12,7 @@ const HomeRoute = ({ photos, topics, openModal, updateToFavPhotoIds, favoritePho
     <div className="home-route">
       {/* Insert React */}
       <TopNavigationBar topics={topics} updateToFavPhotoIds={updateToFavPhotoIds} favoritePhotos={favoritePhotos} getPhotosByTopicId={getPhotosByTopicId} />
-      <PhotoList photos={photos} updateToFavPhotoIds={updateToFavPhotoIds} favoritePhotos={favoritePhotos} openModal={openModal}/>
+      <PhotoList photos={photos} updateToFavPhotoIds={updateToFavPhotoIds} favoritePhotos={favoritePhotos} openModal={openModal} />
     </div>
   );
 };

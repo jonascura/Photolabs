@@ -5,7 +5,7 @@ import "../styles/PhotoList.scss";
 import PhotoFavButton from "./PhotoFavButton";
 
 const PhotoListItem = ({ photo, updateToFavPhotoIds, favoritePhotos, openModal }) => {
-  console.log("inside PhotoListItem", photo)
+  // console.log("inside PhotoListItem", photo)
   const { id, location, urls, user } = photo;
 
   return (

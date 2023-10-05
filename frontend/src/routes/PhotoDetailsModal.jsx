@@ -36,7 +36,7 @@ const PhotoDetailsModal = ({ photos, closeModal, photo, favoritePhotos, updateTo
       
         {/* Similar Photos */}
         <ul className="photo-list">
-          <PhotoList photos={similar_photos} updateToFavPhotoIds={updateToFavPhotoIds} favoritePhotos={favoritePhotos} openModal={openModal} realPhotos={photos}/>
+          <PhotoList photos={similar_photos} updateToFavPhotoIds={updateToFavPhotoIds} favoritePhotos={favoritePhotos} openModal={openModal} realPhotos={photos} clickedPhoto={photo} />
         </ul>
 
       </div>
